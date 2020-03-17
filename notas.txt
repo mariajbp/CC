@@ -1,0 +1,19 @@
+- AnonGW não guarda qualquer tipo de histórico/ dados permanentes
+- Tunel bidirecional que suporta multiplos clientes
+
+Desenho do AnonGW
+------------------
+
+	-> Protocolo UDP
+	-> Garantir que os pacotes são entregues na ordem que são recebidos(numerar segmentos) no tunel UDP anonimizador
+	-> Multiplexagem de mais do que uma conexão ao mesmo tempo 
+	-> Pacotes de difentes conexões não se podem misturar 
+
+	-> Garantir segurança 
+	   - Pacotes não podem ser observados se forem captados pelo wireshark 
+	   - Cifragem de conteudo (existe uma classe em java cipher)
+
+	-> Não há controlo de congestão, continua a tentar mandar pacotes
+
+	-> Salta entre varios anonGW para manter o anonimato do cliente 
+
