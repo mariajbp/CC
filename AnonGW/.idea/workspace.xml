@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bd3776d7-0bac-41b3-9078-1e9ee3f51515" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/ServerWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AnonGW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnonGW.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servidor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,12 +93,24 @@
       <workItem from="1584447483722" duration="274000" />
       <workItem from="1584447783019" duration="87000" />
       <workItem from="1584448302064" duration="3041000" />
-      <workItem from="1584457036400" duration="4007000" />
+      <workItem from="1584457036400" duration="4266000" />
     </task>
+    <task id="LOCAL-00001" summary="BARRREEEEEEEEEEEEEEEEIIIIIIIIIIIIIIIIIII">
+      <created>1584461083287</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584461083287</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="BARRREEEEEEEEEEEEEEEEIIIIIIIIIIIIIIIIIII" />
+    <option name="LAST_COMMIT_MESSAGE" value="BARRREEEEEEEEEEEEEEEEIIIIIIIIIIIIIIIIIII" />
   </component>
   <component name="WindowStateProjectService">
     <state x="320" y="117" key="#Project_Structure" timestamp="1584446408853">
@@ -123,10 +133,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="294" y="54" width="824" height="684" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/67.27.1299.741@67.27.1299.741" timestamp="1584447684129" />
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2" timestamp="1584461066264">
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2" timestamp="1584461083066">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1584461066264" />
+    <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1584461083066" />
     <state width="1253" height="175" key="GridCell.Tab.0.bottom" timestamp="1584456993977">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -151,6 +161,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="199" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1584447868960" />
+    <state x="311" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1584461091235">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="311" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1584461091235" />
     <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1584446398251">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

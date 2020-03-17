@@ -16,13 +16,23 @@ public class ServerWorker implements Runnable{
         sos =server.getOutputStream();
     }
 
-    public void run() throws IOException {
+    public void run()  {
         byte[] barreiClientToServer = new byte[1024];
         byte[] barreiServerToClient = new byte[1024];
+        try {
 
         while (true){
             if ((is.read(barreiClientToServer) != -1)) sos.write(barreiClientToServer);
             if ((sis.read(barreiServerToClient)!= -1)) os.write(barreiServerToClient);
+        }
+
+        } catch (Exception e){
+            try{ is.close();
+            sis.close();
+            os.close();
+            sos.close();
+
+            }catch (Exception ex){}
         }
 
 

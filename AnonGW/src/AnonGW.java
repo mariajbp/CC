@@ -16,7 +16,7 @@ public class AnonGW
 
         while (true){
             Socket s =  ss.accept();
-            ServerWorker sw= new ServerWorker(s.getInputStream(),s.getOutputStream(),s);
+            ServerWorker sw= new ServerWorker(s,server);
             sw.run();
 
 
