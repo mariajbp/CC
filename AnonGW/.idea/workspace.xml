@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="AnonGW:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="bd3776d7-0bac-41b3-9078-1e9ee3f51515" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/AnonGW_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AnonGW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnonGW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerWorker.java" afterDir="false" />
@@ -43,8 +49,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
@@ -52,7 +58,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Servidor">
     <configuration name="AnonGW" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="AnonGW" />
       <module name="AnonGW" />
@@ -60,8 +66,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Servidor" />
+      <module name="AnonGW" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Servidor" />
         <item itemvalue="Application.AnonGW" />
       </list>
     </recent_temporary>
@@ -94,6 +108,7 @@
       <workItem from="1584447783019" duration="87000" />
       <workItem from="1584448302064" duration="3041000" />
       <workItem from="1584457036400" duration="4266000" />
+      <workItem from="1585239218882" duration="8825000" />
     </task>
     <task id="LOCAL-00001" summary="BARRREEEEEEEEEEEEEEEEIIIIIIIIIIIIIIIIIII">
       <created>1584461083287</created>
@@ -117,14 +132,18 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="320" y="117" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1584446408853" />
-    <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1584447732992">
+    <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585240826928">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1584447732992" />
+    <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1585240826928" />
     <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1584457600265">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1584457600264" />
+    <state x="439" y="183" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585239920946">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="439" y="183" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog/67.27.1299.741@67.27.1299.741" timestamp="1585239920946" />
     <state x="557" y="288" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584448414529">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -137,30 +156,30 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1584461083066" />
-    <state width="1253" height="175" key="GridCell.Tab.0.bottom" timestamp="1584456993977">
+    <state width="1253" height="239" key="GridCell.Tab.0.bottom" timestamp="1585252300977">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="175" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1584456993977" />
-    <state width="1253" height="175" key="GridCell.Tab.0.center" timestamp="1584456993976">
+    <state width="1253" height="239" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1585252300977" />
+    <state width="1253" height="239" key="GridCell.Tab.0.center" timestamp="1585252300976">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="175" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1584456993976" />
-    <state width="1253" height="175" key="GridCell.Tab.0.left" timestamp="1584456993976">
+    <state width="1253" height="239" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1585252300976" />
+    <state width="1253" height="239" key="GridCell.Tab.0.left" timestamp="1585252300976">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="175" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1584456993976" />
-    <state width="1253" height="175" key="GridCell.Tab.0.right" timestamp="1584456993976">
+    <state width="1253" height="239" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1585252300976" />
+    <state width="1253" height="239" key="GridCell.Tab.0.right" timestamp="1585252300977">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="175" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1584456993976" />
+    <state width="1253" height="239" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1585252300977" />
     <state x="421" y="114" width="580" height="564" key="MultipleFileMergeDialog" timestamp="1584447637748">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="421" y="114" width="580" height="564" key="MultipleFileMergeDialog/67.27.1299.741@67.27.1299.741" timestamp="1584447637748" />
-    <state x="199" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1584447868960">
+    <state x="199" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1585243452684">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="199" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1584447868960" />
+    <state x="199" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1585243452684" />
     <state x="311" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1584461091235">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -173,9 +192,13 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="484" y="316" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1584455258922" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1584456330962">
+    <state x="380" y="175" key="run.anything.popup" timestamp="1585243947403">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1584456330962" />
+    <state x="380" y="175" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1585243947403" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1585248770894">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1585248770894" />
   </component>
 </project>

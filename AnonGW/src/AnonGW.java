@@ -8,22 +8,6 @@ import java.util.List;
 
 public class AnonGW
 {
-    public static void main(String[] args) throws IOException {
-        System.out.println("main bonita só para ti Hugo");
-        ServerSocket ss = new ServerSocket(80);
-        Socket server = new Socket(args[3],80);
 
-
-        while (true){
-            Socket s =  ss.accept();
-            ServerWorker sw= new ServerWorker(s,server);
-            sw.run();
-
-
-
-
-
-        }
-    }
 
 }

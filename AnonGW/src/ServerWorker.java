@@ -19,21 +19,37 @@ public class ServerWorker implements Runnable{
     public void run()  {
         byte[] barreiClientToServer = new byte[1024];
         byte[] barreiServerToClient = new byte[1024];
-        try {
+        boolean input=true, output=true;
 
         while (true){
-            if ((is.read(barreiClientToServer) != -1)) sos.write(barreiClientToServer);
-            if ((sis.read(barreiServerToClient)!= -1)) os.write(barreiServerToClient);
+            if((!input)&&(!output)) return;
+          try {
+              if ((is.read(barreiClientToServer) != -1))
+              {
+                  System.out.println("INCOMMING: " + barreiClientToServer.toString() + "\n");
+                  sos.write(barreiClientToServer);
+              }
+          } catch (Exception e){e.printStackTrace();
+          try {
+              input=false;
+              is.close();
+              sos.close();
+          } catch (Exception es){es.printStackTrace();}
+          }
+
+           try{ if ((sis.read(barreiServerToClient)!= -1)){
+               System.out.println("OUTGOING: "+ barreiServerToClient+"\n");
+               os.write(barreiServerToClient);
+                }
+           } catch (Exception e){e.printStackTrace();
+           try{output=false;
+               sis.close();
+               os.close();}
+           catch (Exception es){es.printStackTrace();}
+           }
+
         }
 
-        } catch (Exception e){
-            try{ is.close();
-            sis.close();
-            os.close();
-            sos.close();
-
-            }catch (Exception ex){}
-        }
 
 
 

@@ -14,7 +14,7 @@ public class Servidor {
 
         try {
             while (true) {
-                Socket server = new Socket(args[3], 80);
+                Socket server = new Socket(args[0], 80);
                 Socket s = ss.accept();
                 sockets.add(s);
                 ServerWorker sw = new ServerWorker(s, server);
@@ -23,12 +23,14 @@ public class Servidor {
 
             }
         } catch (Exception e){
+            e.printStackTrace();
 
         for(Socket s:sockets){
             s.shutdownInput();
             s.shutdownOutput();
             s.close();
         }
+        System.out.println("I DED");
         }
 
     }
