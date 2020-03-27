@@ -8,30 +8,27 @@ public class Servidor {
     public static void main(String[] args) throws IOException {
         System.out.println("main bonita só para ti Hugo");
         ServerSocket ss = new ServerSocket(80);
-        ArrayList<Socket> sockets= new ArrayList<>();
+        ArrayList<Socket> clientSockets= new ArrayList<>();
+        ArrayList<Socket> serverSockets= new ArrayList<>();
         ArrayList<Thread> workers = new ArrayList<>();
-
 
         try {
             while (true) {
+                Socket client = ss.accept();
                 Socket server = new Socket(args[0], 80);
-                Socket s = ss.accept();
-                sockets.add(s);
-                ServerWorker sw = new ServerWorker(s, server);
+                clientSockets.add(client);
+                serverSockets.add(server);
+                ServerWorker sw = new ServerWorker(client, server);
                 new Thread(sw).start();
-
-
             }
         } catch (Exception e){
-            e.printStackTrace();
+            e.printStackTrace();}
+        ss.close();
+        for(Socket s:clientSockets) s.close();
+        for(Socket s:serverSockets) s.close();
 
-        for(Socket s:sockets){
-            s.shutdownInput();
-            s.shutdownOutput();
-            s.close();
-        }
         System.out.println("I DED");
-        }
+
 
     }
 

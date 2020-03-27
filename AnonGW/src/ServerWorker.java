@@ -2,56 +2,56 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.Arrays;
 
 public class ServerWorker implements Runnable{
 
-    private InputStream  is, sis;
-    private OutputStream os, sos;
-
-
-    public ServerWorker(Socket s, Socket server) throws IOException {
-        is=s.getInputStream();
-        os=s.getOutputStream();
-        sis = server.getInputStream();
-        sos =server.getOutputStream();
+    private InputStream clientInput, serverInput;
+    private OutputStream clientOutput, serverOutput;
+    private Socket client,server;
+    
+    public ServerWorker(Socket client, Socket server) throws IOException {
+        clientInput = client.getInputStream();
+        clientOutput = client.getOutputStream();
+        serverInput = server.getInputStream();
+        serverOutput =server.getOutputStream();
+        this.client=client;
+        this.server=server;
     }
 
     public void run()  {
-        byte[] barreiClientToServer = new byte[1024];
-        byte[] barreiServerToClient = new byte[1024];
-        boolean input=true, output=true;
+        byte[] barrayCtoS = new byte[1024];
+        byte[] barrayStoC = new byte[1024];
+        boolean inputOn =true, outputOn =true;
+        int num=0;
 
-        while (true){
-            if((!input)&&(!output)) return;
+        while (inputOn||outputOn){
           try {
-              if ((is.read(barreiClientToServer) != -1))
+              if (inputOn&&(num=clientInput.read(barrayCtoS,0,1024)) >0)
               {
-                  System.out.println("INCOMMING: " + barreiClientToServer.toString() + "\n");
-                  sos.write(barreiClientToServer);
+                  System.out.println("INCOMMING: " + Arrays.toString(barrayCtoS) + "\n");
+                  System.out.flush();
+                  serverOutput.write(barrayCtoS,0,num);
+                  serverOutput.flush();
               }
-          } catch (Exception e){e.printStackTrace();
-          try {
-              input=false;
-              is.close();
-              sos.close();
-          } catch (Exception es){es.printStackTrace();}
+          } catch (Exception e){inputOn =false;e.printStackTrace();
+
           }
 
-           try{ if ((sis.read(barreiServerToClient)!= -1)){
-               System.out.println("OUTGOING: "+ barreiServerToClient+"\n");
-               os.write(barreiServerToClient);
+           try{ if (outputOn&&(num=serverInput.read(barrayStoC,0,1024))>0){
+               System.out.println("OUTGOING: "+ Arrays.toString(barrayStoC) +"\n");
+               System.out.flush();
+               clientOutput.write(barrayStoC,0,num);
+               clientOutput.flush();
                 }
-           } catch (Exception e){e.printStackTrace();
-           try{output=false;
-               sis.close();
-               os.close();}
-           catch (Exception es){es.printStackTrace();}
+           } catch (Exception e){outputOn =false;e.printStackTrace();
+
            }
 
         }
-
-
-
-
+        try {
+        client.close();
+        server.close();
+        }catch (Exception e){e.printStackTrace();}
     }
 }
