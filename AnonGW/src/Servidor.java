@@ -18,8 +18,11 @@ public class Servidor {
                 Socket server = new Socket(args[0], 80);
                 clientSockets.add(client);
                 serverSockets.add(server);
-                ServerWorker sw = new ServerWorker(client, server);
-                new Thread(sw).start();
+                Mario cts = new Mario(client.getInputStream(),server.getOutputStream(), client, server);
+                Mario stc = new Mario(server.getInputStream(),client.getOutputStream(),server,client);
+                //ServerWorker sw = new ServerWorker(client, server);
+                new Thread(cts).start();
+                new Thread(stc).start();
             }
         } catch (Exception e){
             e.printStackTrace();}
