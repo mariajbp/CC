@@ -1,0 +1,47 @@
+import Structs.PacketUDP;
+
+import java.io.ByteArrayInputStream;
+import java.io.ObjectInputStream;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
+import java.net.Socket;
+
+public class UDPServer implements Runnable {
+    private int tcpPort;
+    private AnonGW agw;
+    private DatagramSocket udpSocket;
+    private InetAddress targetServer;
+    public UDPServer(AnonGW anonGW, DatagramSocket ds, int tcpPort, InetAddress targetServer){
+           agw=anonGW;
+           udpSocket=ds;
+           this.tcpPort= tcpPort;
+           this.targetServer=targetServer;
+    }
+    public void run() {
+        try {
+            byte[] buffer = new byte[64 * 1024];
+            DatagramPacket rec = new DatagramPacket(buffer, buffer.length);
+            while (true) {
+                //Receive
+                udpSocket.receive(rec);
+                PacketUDP pack = (PacketUDP) new ObjectInputStream(new ByteArrayInputStream(rec.getData())).readObject();
+                int sess = pack.getSessionId();
+                if(!agw.hasSession(sess)){
+                    Socket server =  new Socket(targetServer,tcpPort);
+                    agw.initSession(server,rec.getAddress(),tcpPort,sess);
+                    new Thread(new UDPServerWorker(sess,agw)).start();
+                    new Thread(new TCPServerWorker(sess,agw)).start();
+                }else {
+                    agw.getSession(sess).getQueue().put(pack);
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+}
+

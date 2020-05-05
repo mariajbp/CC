@@ -7,19 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bd3776d7-0bac-41b3-9078-1e9ee3f51515" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/TcpPipeWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../AnonGW.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AnonGW.jar" beforeDir="false" afterPath="$PROJECT_DIR$/AnonGW.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Mario.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/ServerWorker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/AnonGW_jar/AnonG.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/AnonGW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/AnonGW.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/META-INF/AnonGW.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Servidor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/PacketLog.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TcpPipeWorker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TcpToUdpWorker.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AnonGW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnonGW.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Mario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ServerWorker.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Structs/PacketLog.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TcpPipeWorker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TcpToUdpWorker.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +70,7 @@
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
+      <recent name="Structs" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Servidor">
@@ -114,6 +117,7 @@
       <workItem from="1586439646889" duration="11783000" />
       <workItem from="1587464743082" duration="4091000" />
       <workItem from="1588068971376" duration="6056000" />
+      <workItem from="1588673613816" duration="19304000" />
     </task>
     <task id="LOCAL-00001" summary="BARRREEEEEEEEEEEEEEEEIIIIIIIIIIIIIIIIIII">
       <created>1584461083287</created>
@@ -149,10 +153,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1585240826928" />
-    <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1588073629792">
+    <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1588714068261">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1588073629792" />
+    <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1588714068261" />
     <state x="439" y="183" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585239920946">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -217,9 +221,9 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="380" y="175" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1585243947403" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1588075183232">
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1588711043264">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1588075183232" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1588711043264" />
   </component>
 </project>
