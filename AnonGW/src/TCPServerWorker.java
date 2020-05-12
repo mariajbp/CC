@@ -1,5 +1,7 @@
+import Structs.PacketReg;
 import Structs.PacketUDP;
 import Structs.Session;
+import Structs.SocketCircularBuffer;
 
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
@@ -24,13 +26,12 @@ public class TCPServerWorker implements Runnable {
     public TCPServerWorker(int sessId,AnonGW agw) {
         sessionId=sessId;
         this.agw=agw;
+        System.out.println(agw);
         sess = agw.getSession(sessionId);
         tcpSocket = sess.getTcpSock();
         baseSeqNo = (int)(Math.random()*Integer.MAX_VALUE);
         anonGW =  sess.getAnonGWAddress();
         udpPort =  sess.getUdpPort();
-
-
     }
     public void run() {
         try{tcpIn = tcpSocket.getInputStream();
@@ -48,6 +49,8 @@ public class TCPServerWorker implements Runnable {
             bos.close();
             //Send
             DatagramPacket udp =  new DatagramPacket(data,data.length,anonGW,udpPort);
+            SocketCircularBuffer<Integer, PacketReg> bf=sess.getPacketBuffer();
+            bf.insert(new );
             agw.sendUdp(udp);
         }
 

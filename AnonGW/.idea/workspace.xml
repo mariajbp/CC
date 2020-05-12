@@ -8,20 +8,25 @@
   <component name="ChangeListManager">
     <list default="true" id="bd3776d7-0bac-41b3-9078-1e9ee3f51515" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../AnonGW.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AnonGW_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AnonGW_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AnonGW.jar" beforeDir="false" afterPath="$PROJECT_DIR$/AnonGW.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/AnonGW_jar/AnonG.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/AnonGW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/AnonGW.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/META-INF/AnonGW.kotlin_module" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Servidor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/PacketLog.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TcpPipeWorker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TcpToUdpWorker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/PacketUDP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Structs/PacketUDP.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Structs/Session.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TCPServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/TCPServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TCPServerWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/TCPServerWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/UDPServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/UDPServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/UDPServerWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/UDPServerWorker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AnonGW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnonGW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servidor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Structs/PacketLog.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TcpPipeWorker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TcpToUdpWorker.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Structs/PacketUDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structs/PacketUDP.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Structs/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structs/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCPServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TCPServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCPServerWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UDPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UDPServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UDPServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UDPServerWorker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,6 +123,7 @@
       <workItem from="1587464743082" duration="4091000" />
       <workItem from="1588068971376" duration="6056000" />
       <workItem from="1588673613816" duration="19304000" />
+      <workItem from="1589277860581" duration="31111000" />
     </task>
     <task id="LOCAL-00001" summary="BARRREEEEEEEEEEEEEEEEIIIIIIIIIIIIIIIIIII">
       <created>1584461083287</created>
@@ -145,22 +151,23 @@
     <option name="LAST_COMMIT_MESSAGE" value="OwO I'm Bbb..bb..Bwoken Senpai" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="117" key="#Project_Structure" timestamp="1584446408853">
-      <screen x="0" y="0" width="1440" height="900" />
+    <state x="159" y="27" width="1024" height="741" key="#Project_Structure" timestamp="1589292125351">
+      <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="320" y="117" key="#Project_Structure/0.0.1440.900@0.0.1440.900" timestamp="1584446408853" />
+    <state x="159" y="27" width="1024" height="741" key="#Project_Structure/67.27.1299.741@67.27.1299.741" timestamp="1589292125351" />
     <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1585240826928">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1585240826928" />
-    <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1588714068261">
+    <state x="524" y="109" width="553" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1589321510070">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="524" y="109" width="374" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1588714068261" />
-    <state x="439" y="183" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1585239920946">
+    <state x="524" y="109" width="553" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1589321510070" />
+    <state x="439" y="183" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589279799429">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="439" y="183" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog/67.27.1299.741@67.27.1299.741" timestamp="1585239920946" />
+    <state x="439" y="183" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog/67.27.1299.741@67.27.1299.741" timestamp="1589279799429" />
     <state x="557" y="288" width="308" height="216" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584448414529">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -177,10 +184,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="279" y="27" width="865" height="741" key="CommitChangelistDialog2/67.27.1299.741@67.27.1299.741" timestamp="1585268050103" />
-    <state x="446" y="141" width="424" height="513" key="FileChooserDialogImpl" timestamp="1586451419312">
+    <state x="446" y="141" width="424" height="513" key="FileChooserDialogImpl" timestamp="1589300965976">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="446" y="141" width="424" height="513" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1586451419312" />
+    <state x="446" y="141" width="424" height="513" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1589300965976" />
     <state width="1253" height="119" key="GridCell.Tab.0.bottom" timestamp="1586459276441">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -201,14 +208,26 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="421" y="114" width="580" height="564" key="MultipleFileMergeDialog/67.27.1299.741@67.27.1299.741" timestamp="1584447637748" />
-    <state x="151" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1586451426397">
+    <state x="151" y="27" width="1024" height="741" key="SettingsEditor" timestamp="1589291817121">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="151" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1586451426397" />
+    <state x="151" y="27" width="1024" height="741" key="SettingsEditor/67.27.1299.741@67.27.1299.741" timestamp="1589291817121" />
     <state x="311" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1585268056035">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="311" y="132" width="800" height="528" key="Vcs.Push.Dialog.v2/67.27.1299.741@67.27.1299.741" timestamp="1585268056035" />
+    <state x="428" y="264" width="476" height="266" key="classpath-attribute-editor" timestamp="1589279802201">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="428" y="264" width="476" height="266" key="classpath-attribute-editor/67.27.1299.741@67.27.1299.741" timestamp="1589279802201" />
+    <state x="166" y="125" width="1099" height="543" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589292378786">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="166" y="125" width="1099" height="543" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.1299.741@67.27.1299.741" timestamp="1589292378786" />
+    <state x="167" y="125" width="1099" height="543" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog" timestamp="1589292378786">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="167" y="125" width="1099" height="543" key="com.intellij.history.integration.ui.views.SelectionHistoryDialog/67.27.1299.741@67.27.1299.741" timestamp="1589292378786" />
     <state x="374" y="284" key="com.intellij.ide.util.TipDialog" timestamp="1584446398251">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -217,6 +236,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="484" y="316" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1584455258922" />
+    <state x="407" y="135" width="618" height="580" key="find.popup" timestamp="1589302936061">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="407" y="135" width="618" height="580" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1589302936061" />
     <state x="380" y="175" key="run.anything.popup" timestamp="1585243947403">
       <screen x="67" y="27" width="1299" height="741" />
     </state>

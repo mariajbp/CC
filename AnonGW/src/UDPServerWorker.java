@@ -16,6 +16,7 @@ public class UDPServerWorker implements Runnable {
         this.session = agw.getSession(sess);
         this.queue=session.getQueue();
         this.tcpSocket = session.getTcpSock();
+        System.out.println("EU PRINTO, LOGO EXISTO");
     }
 
     public void run() {
@@ -24,8 +25,10 @@ public class UDPServerWorker implements Runnable {
      try{
          while(flag>0){
              PacketUDP pack = queue.take();
+             //System.out.println("Flag :"+flag );
              flag=pack.getFlag();
              buf = pack.getBody();
+             //System.out.println(new String(buf));
              tcpSocket.getOutputStream().write(buf);
 
          }

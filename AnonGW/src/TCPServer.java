@@ -21,6 +21,7 @@ public class TCPServer implements Runnable {
                 Socket sock = ss.accept();
                 int sessId = agw.initSession(sock);
                 new Thread(new TCPServerWorker(sessId,agw)).start();
+                new Thread(new UDPServerWorker(sessId,agw)).start();
 
 
             }

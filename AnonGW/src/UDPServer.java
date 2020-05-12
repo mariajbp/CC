@@ -1,4 +1,5 @@
 import Structs.PacketUDP;
+import Structs.Session;
 
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;
@@ -25,16 +26,19 @@ public class UDPServer implements Runnable {
             while (true) {
                 //Receive
                 udpSocket.receive(rec);
-                PacketUDP pack = (PacketUDP) new ObjectInputStream(new ByteArrayInputStream(rec.getData())).readObject();
+                PacketUDP pack = (PacketUDP) (new ObjectInputStream(new ByteArrayInputStream(rec.getData())).readObject());
+                //System.out.println(pack.toString());
                 int sess = pack.getSessionId();
                 if(!agw.hasSession(sess)){
                     Socket server =  new Socket(targetServer,tcpPort);
                     agw.initSession(server,rec.getAddress(),tcpPort,sess);
                     new Thread(new UDPServerWorker(sess,agw)).start();
                     new Thread(new TCPServerWorker(sess,agw)).start();
-                }else {
-                    agw.getSession(sess).getQueue().put(pack);
                 }
+                    Session s = agw.getSession(sess);
+                    s.getQueue().put(pack);
+                    //System.out.println(s.toString());
+
 
             }
 

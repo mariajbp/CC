@@ -1,6 +1,7 @@
 package Structs;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 public class PacketUDP implements Serializable {
     private int sessionId;
@@ -17,6 +18,15 @@ public class PacketUDP implements Serializable {
         this.padding = new byte[filler];
     }
 
+    public String toString() {
+        return "PacketUDP{" +
+                "sessionId=" + sessionId +
+                ", seqNo=" + seqNo +
+                ", flag=" + flag +
+                ", body=" + Arrays.toString(body) +
+                ", padding=" + Arrays.toString(padding) +
+                '}';
+    }
 
     public int getSessionId() {return sessionId;}
     public int getSeqNo() {return seqNo;}

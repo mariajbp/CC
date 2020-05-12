@@ -15,6 +15,7 @@ import java.util.concurrent.LinkedBlockingQueue;
 
 public class AnonGW {
     public static final int BODY_MAX_SIZE = 1024;
+    public static final int SOCKET_BUFFER_SIZE = 100;
     private ConcurrentMap<Integer, Session> sessionTable;
     private List<InetAddress> peers;
     private  int udpPort;
@@ -26,8 +27,7 @@ public class AnonGW {
         this.udpPort=udpPort;
         sendUdp = udp;
     }
-
-
+    //FromTCP
     public int initSession(Socket sock) {
         InetAddress peer = peers.get((int) (Math.random()*(peers.size()-1)));
         BlockingQueue<PacketUDP> queue = new LinkedBlockingQueue<PacketUDP>();
@@ -36,19 +36,30 @@ public class AnonGW {
         sessionTable.put(sessId,s);
         return sessId;
     }
+    //From UDP
     public void initSession(Socket sock, InetAddress gateway, int tcpPort ,int sessionId) {
         BlockingQueue<PacketUDP> queue = new LinkedBlockingQueue<>();
-        Session s =  new Session(sessionId,sock, gateway,tcpPort,queue);
-        int sessId = sessionId;
-        sessionTable.put(sessId,s);
+        Session s =  new Session(sessionId,sock, gateway,udpPort,tcpPort,queue);
+        sessionTable.put(sessionId,s);
     }
     public Session getSession(int id){
         return sessionTable.get(id);
     }
+
     public void sendUdp(DatagramPacket packet) throws IOException {
-        sendUdp.send(packet);
+       sendUdp.send(packet);
     }
     public boolean hasSession(int id){
         return sessionTable.containsKey(id);
+    }
+
+    @Override
+    public String toString() {
+        return "AnonGW{" +
+                "sessionTable=" + sessionTable +
+                ", peers=" + peers +
+                ", udpPort=" + udpPort +
+                ", sendUdp=" + sendUdp +
+                '}';
     }
 }
