@@ -1,5 +1,3 @@
-import Structs.Session;
-
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -20,8 +18,9 @@ public class TCPServer implements Runnable {
             while(true) {
                 Socket sock = ss.accept();
                 int sessId = agw.initSession(sock);
+                new Thread(new TCPInPipe(sessId,agw)).start();
                 new Thread(new TCPServerWorker(sessId,agw)).start();
-                new Thread(new UDPServerWorker(sessId,agw)).start();
+                new Thread(new TCPOutPipe(sessId,agw)).start();
 
 
             }

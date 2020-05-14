@@ -8,25 +8,23 @@
   <component name="ChangeListManager">
     <list default="true" id="bd3776d7-0bac-41b3-9078-1e9ee3f51515" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../AnonGW.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/AnonGW_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/AnonGW_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AnonGW.jar" beforeDir="false" afterPath="$PROJECT_DIR$/AnonGW.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/AnonGW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/AnonGW.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Servidor.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Servidor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/PacketUDP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Structs/PacketUDP.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Structs/Session.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TCPServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/TCPServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TCPServerWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/TCPServerWorker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/UDPServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/UDPServer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/UDPServerWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/UDPServerWorker.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/UDPServerWorker.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AnonGW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnonGW.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servidor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Structs/PacketUDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structs/PacketUDP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Structs/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structs/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Structs/SocketCircularBuffer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structs/SocketCircularBuffer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCPServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TCPServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCPServerWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UDPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UDPServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/UDPServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UDPServerWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/UDPServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCPOutPipe.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,6 +71,10 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="Test" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="" />
       <recent name="Structs" />
@@ -124,6 +126,8 @@
       <workItem from="1588068971376" duration="6056000" />
       <workItem from="1588673613816" duration="19304000" />
       <workItem from="1589277860581" duration="31111000" />
+      <workItem from="1589383770389" duration="10200000" />
+      <workItem from="1589394019652" duration="13872000" />
     </task>
     <task id="LOCAL-00001" summary="BARRREEEEEEEEEEEEEEEEIIIIIIIIIIIIIIIIIII">
       <created>1584461083287</created>
@@ -160,10 +164,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="174" y="54" key="#com.intellij.execution.impl.EditConfigurationsDialog/67.27.1299.741@67.27.1299.741" timestamp="1585240826928" />
-    <state x="524" y="109" width="553" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1589321510070">
+    <state x="524" y="109" width="553" height="575" key="#com.intellij.ide.util.MemberChooser" timestamp="1589389392949">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="524" y="109" width="553" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1589321510070" />
+    <state x="524" y="109" width="553" height="575" key="#com.intellij.ide.util.MemberChooser/67.27.1299.741@67.27.1299.741" timestamp="1589389392949" />
     <state x="439" y="183" width="525" height="428" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1589279799429">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -176,6 +180,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="294" y="54" width="824" height="684" key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor/67.27.1299.741@67.27.1299.741" timestamp="1584447684129" />
+    <state x="469" y="291" width="494" height="219" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1589393830152">
+      <screen x="67" y="27" width="1299" height="741" />
+    </state>
+    <state x="469" y="291" width="494" height="219" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/67.27.1299.741@67.27.1299.741" timestamp="1589393830152" />
     <state x="365" y="38" width="692" height="717" key="#com.intellij.unscramble.UnscrambleDialog" timestamp="1588073336144">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -188,22 +196,22 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="446" y="141" width="424" height="513" key="FileChooserDialogImpl/67.27.1299.741@67.27.1299.741" timestamp="1589300965976" />
-    <state width="1253" height="119" key="GridCell.Tab.0.bottom" timestamp="1586459276441">
+    <state width="1253" height="89" key="GridCell.Tab.0.bottom" timestamp="1589393972649">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="119" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1586459276441" />
-    <state width="1253" height="119" key="GridCell.Tab.0.center" timestamp="1586459276440">
+    <state width="1253" height="89" key="GridCell.Tab.0.bottom/67.27.1299.741@67.27.1299.741" timestamp="1589393972649" />
+    <state width="1253" height="89" key="GridCell.Tab.0.center" timestamp="1589393972649">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="119" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1586459276440" />
-    <state width="1253" height="119" key="GridCell.Tab.0.left" timestamp="1586459276440">
+    <state width="1253" height="89" key="GridCell.Tab.0.center/67.27.1299.741@67.27.1299.741" timestamp="1589393972649" />
+    <state width="1253" height="89" key="GridCell.Tab.0.left" timestamp="1589393972648">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="119" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1586459276440" />
-    <state width="1253" height="119" key="GridCell.Tab.0.right" timestamp="1586459276441">
+    <state width="1253" height="89" key="GridCell.Tab.0.left/67.27.1299.741@67.27.1299.741" timestamp="1589393972648" />
+    <state width="1253" height="89" key="GridCell.Tab.0.right" timestamp="1589393972649">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state width="1253" height="119" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1586459276441" />
+    <state width="1253" height="89" key="GridCell.Tab.0.right/67.27.1299.741@67.27.1299.741" timestamp="1589393972649" />
     <state x="421" y="114" width="580" height="564" key="MultipleFileMergeDialog" timestamp="1584447637748">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -244,9 +252,9 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="380" y="175" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1585243947403" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1588711043264">
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1589408698492">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1588711043264" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1589408698492" />
   </component>
 </project>

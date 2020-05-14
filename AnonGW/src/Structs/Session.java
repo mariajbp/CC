@@ -6,29 +6,34 @@ import java.util.Random;
 import java.util.concurrent.BlockingQueue;
 
 public class Session {
+    public static final int TIMEOUT = 2000;
+    public static final int WINDOW_SIZE = 100;
     int sessionId;
     Socket tcpSock;
     InetAddress anonGWAddress;
     int udpPort;
-    BlockingQueue<PacketUDP> queue;
-    SocketCircularBuffer<Integer,PacketReg> packetBuffer;
+    BlockingQueue<PacketUDP> tcpQueue;
+    BlockingQueue<PacketUDP> udpQueue;
+    SlidingWindow recieving;
 
 
-    public Session(Socket sock, InetAddress peer, int udpPort , BlockingQueue<PacketUDP> q){
+    public Session(Socket sock, InetAddress peer, int udpPort , BlockingQueue<PacketUDP> tcpq,BlockingQueue<PacketUDP>udpq){
         sessionId =(int) (Math.random() * Integer.MAX_VALUE);
         tcpSock=sock;
         anonGWAddress = peer;
         this.udpPort=udpPort;
-        queue = q;
-        packetBuffer =  new SocketCircularBuffer<>(100);
+        tcpQueue = tcpq;
+        udpQueue = udpq;
+        recieving=new SlidingWindow(WINDOW_SIZE);
     }
-    public Session(int sessionId,Socket sock, InetAddress peer,int udpPort ,int tcpPort, BlockingQueue<PacketUDP> q){
+    public Session(int sessionId,Socket sock, InetAddress peer,int udpPort ,int tcpPort, BlockingQueue<PacketUDP> tcp,BlockingQueue<PacketUDP>udp){
         this.sessionId =sessionId;
         tcpSock=sock;
         this.udpPort=udpPort;
         anonGWAddress = peer;
-        queue = q;
-        packetBuffer =  new SocketCircularBuffer<>(100);
+        tcpQueue = tcp;
+        udpQueue = udp;
+        recieving=new SlidingWindow(WINDOW_SIZE);
     }
 
     public String toString() {
@@ -37,7 +42,6 @@ public class Session {
                 ",|| tcpSock=" + tcpSock +
                 ",|| anonGWAddress=" + anonGWAddress +
                 ",|| udpPort=" + udpPort +
-                ",|| queueSize=" + queue.size() +
                 '}';
     }
 
@@ -45,8 +49,9 @@ public class Session {
     public Socket getTcpSock() {return tcpSock;}
     public InetAddress getAnonGWAddress() {return anonGWAddress; }
     public int getUdpPort() {return udpPort;}
-    public BlockingQueue<PacketUDP> getQueue() {return queue;}
-    public SocketCircularBuffer<Integer, PacketReg> getPacketBuffer() {
-        return packetBuffer;
+    public BlockingQueue<PacketUDP> getTCPQueue() {return tcpQueue;}
+    public BlockingQueue<PacketUDP> getUDPQueue() {return udpQueue;}
+    public SlidingWindow getRecievingWindow() {
+        return recieving;
     }
 }

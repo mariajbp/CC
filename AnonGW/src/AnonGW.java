@@ -30,16 +30,18 @@ public class AnonGW {
     //FromTCP
     public int initSession(Socket sock) {
         InetAddress peer = peers.get((int) (Math.random()*(peers.size()-1)));
-        BlockingQueue<PacketUDP> queue = new LinkedBlockingQueue<PacketUDP>();
-        Session s =  new Session(sock, peer,udpPort,queue);
+        BlockingQueue<PacketUDP> tcpqueue = new LinkedBlockingQueue<PacketUDP>();
+        BlockingQueue<PacketUDP> udpqueue = new LinkedBlockingQueue<PacketUDP>();
+        Session s =  new Session(sock, peer,udpPort,tcpqueue,udpqueue);
         int sessId = s.getId();
         sessionTable.put(sessId,s);
         return sessId;
     }
     //From UDP
     public void initSession(Socket sock, InetAddress gateway, int tcpPort ,int sessionId) {
-        BlockingQueue<PacketUDP> queue = new LinkedBlockingQueue<>();
-        Session s =  new Session(sessionId,sock, gateway,udpPort,tcpPort,queue);
+        BlockingQueue<PacketUDP> tcpQueue = new LinkedBlockingQueue<>();
+        BlockingQueue<PacketUDP> udpQueue = new LinkedBlockingQueue<>();
+        Session s =  new Session(sessionId,sock, gateway,udpPort,tcpPort,tcpQueue,udpQueue);
         sessionTable.put(sessionId,s);
     }
     public Session getSession(int id){

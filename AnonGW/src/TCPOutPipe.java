@@ -3,20 +3,19 @@ import Structs.Session;
 
 import java.net.Socket;
 import java.util.concurrent.BlockingQueue;
-
-public class UDPServerWorker implements Runnable {
+//Just a tap on a tcp OutputStream
+public class TCPOutPipe implements Runnable {
     private int sessionId;
     private AnonGW agw;
     private Session session;
     private BlockingQueue<PacketUDP> queue;
     private Socket tcpSocket;
-    public UDPServerWorker(int sess, AnonGW agw) {
+    public TCPOutPipe(int sess, AnonGW agw) {
         sessionId = sess;
         this.agw=agw;
         this.session = agw.getSession(sess);
-        this.queue=session.getQueue();
+        this.queue=session.getTCPQueue();
         this.tcpSocket = session.getTcpSock();
-        System.out.println("EU PRINTO, LOGO EXISTO");
     }
 
     public void run() {
