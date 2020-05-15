@@ -8,6 +8,7 @@ import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.Socket;
+import java.util.Arrays;
 import java.util.concurrent.BlockingQueue;
 
 //UDP socket listening router
@@ -35,21 +36,29 @@ public class UDPServer implements Runnable {
                 if(!agw.hasSession(sess)){
                     Socket server =  new Socket(targetServer,tcpPort);
                     agw.initSession(server,rec.getAddress(),tcpPort,sess);
+                    new Thread(new TCPInPipe(sess,agw)).start();
                     new Thread(new TCPOutPipe(sess,agw)).start();
                     new Thread(new TCPServerWorker(sess,agw)).start();
                 }
                 Session s = agw.getSession(sess);
                 //Ack check
+                System.out.println("fora");
                 if(pack.getFlag() == 200){s.getUDPQueue().put(pack);} else {
+
                     SlidingWindow ord = s.getRecievingWindow();
                     BlockingQueue<PacketUDP> queue = s.getTCPQueue();
                     boolean ok =ord.insert(pack.getSeqNo(), pack);
+                    for(int i=0;i<10;i++)
                     if(ok){s.getUDPQueue().put(new PacketUDP(sess,pack.getSeqNo(),201));}
-                    for (PacketUDP p : ord.retrieve()) {
+                    PacketUDP[] tmp =ord.retrieve();
+                    System.out.println("PACK ARRAY :" + Arrays.toString(tmp) );
+                    for (PacketUDP p : tmp) {
+
+                        System.out.println("Q :"+queue);
                         queue.put(p);
                     }
                 }
-                    //System.out.println(s.toString());
+
 
 
             }

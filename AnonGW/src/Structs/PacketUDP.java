@@ -18,6 +18,7 @@ public class PacketUDP implements Serializable {
         this.flag=1;
         this.body=data;
         this.padding = new byte[filler];
+        this.stamp= Instant.now();
     }
     //ACK
     public PacketUDP(int sessionId, int seqN,int  flag) {
@@ -25,15 +26,18 @@ public class PacketUDP implements Serializable {
         this.seqNo= seqN;
         this.flag=flag;
         this.padding = new byte[0];
+        this.stamp= Instant.now();
     }
 
+    @Override
     public String toString() {
         return "PacketUDP{" +
                 "sessionId=" + sessionId +
-                ", seqNo=" + seqNo +
-                ", flag=" + flag +
-                ", body=" + Arrays.toString(body) +
-                ", padding=" + Arrays.toString(padding) +
+                "|| seqNo=" + seqNo +
+                "|| flag=" + flag +
+                "|| stamp=" + stamp +
+                "|| body=" + Arrays.toString(body) +
+                "|| padding=" + Arrays.toString(padding) +
                 '}';
     }
 

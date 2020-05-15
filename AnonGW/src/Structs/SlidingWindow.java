@@ -2,6 +2,7 @@ package Structs;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.Arrays;
 
 import static Structs.Session.TIMEOUT;
 
@@ -16,7 +17,7 @@ public class SlidingWindow {
         buffer= new PacketUDP[lenght];
     }
    public boolean insert(int index, PacketUDP p){
-        if(base ==-1) base =p.getSeqNo();
+        if(base ==-1) base = index;
         int i=index-base;
         if(i<0|| i>=lenght) return false;
         buffer[i]=p;
@@ -25,7 +26,11 @@ public class SlidingWindow {
     //ACK [DANGEROUS]
     public void setNull(int index){
         int i=index-base;
+        if(i<0|| i>=lenght) return;
         buffer[i]=null;
+        int nullInd=0;
+        while (nullInd<lenght && buffer[nullInd]==null){nullInd++;}
+        if(nullInd==lenght) base =-1;
     }
    public PacketUDP get(int index){
         int i=index-base;
@@ -35,11 +40,12 @@ public class SlidingWindow {
     //Retrieve and remove Recieving
    public PacketUDP[] retrieve(){
         int i=0;
-        while (i<lenght && buffer[i]!=null){i++;}
-        PacketUDP[] r = new PacketUDP[i+1];
+        while (i<lenght && buffer[i]!= null){i++;}
+        PacketUDP[] r = new PacketUDP[i];
         PacketUDP[] newbuf = new PacketUDP[lenght];
-        System.arraycopy(buffer,0,r,0,i+1);
+        System.arraycopy(buffer,0,r,0,i);
         System.arraycopy(buffer,i,newbuf,0,lenght-i);
+        base +=i;
         buffer=newbuf;
         return r;
     }
@@ -57,7 +63,18 @@ public class SlidingWindow {
         PacketUDP[] newbuf = new PacketUDP[lenght];
         System.arraycopy(buffer,nullInd,r,0,timeOutInd);
         System.arraycopy(buffer,nullInd,newbuf,0,lenght-nullInd);
+        base+= base==-1? 0: nullInd;
         buffer=newbuf;
         return r;
+    }
+
+
+    @Override
+    public String toString() {
+        return "SlidingWindow{" +
+                "base=" + base +
+                ", lenght=" + lenght +
+                ", buffer=" + Arrays.toString(buffer) +
+                '}';
     }
 }

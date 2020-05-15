@@ -15,7 +15,7 @@ public class TCPInPipe implements Runnable {
     public TCPInPipe(int sess, AnonGW agw) {
         sessionId = sess;
         Session session = agw.getSession(sess);
-        this.queue=session.getTCPQueue();
+        this.queue=session.getUDPQueue();
         this.tcpSocket = session.getTcpSock();
         this.baseSeqNo = (int)(Math.random()*Integer.MAX_VALUE);
     }

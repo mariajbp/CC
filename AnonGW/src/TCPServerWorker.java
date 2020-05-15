@@ -34,13 +34,16 @@ public class TCPServerWorker implements Runnable {
         while ((p=queue.take()).getFlag()!=9){
             //Ack Check
             if(p.getFlag()==200){
+
                 sendingWindow.setNull(p.getSeqNo());
+                System.out.println(sendingWindow.toString());
             }else {
                 //Serialization artifice
                 ByteArrayOutputStream bos;
                 byte[] data;
                 DatagramPacket udp;
                 //Retry - higher priority
+                System.out.println( "B4Retry :"+sendingWindow);
                 PacketUDP[] retries = sendingWindow.retry();
                 if(retries.length>0){
                 for (PacketUDP retry :retries){
@@ -56,8 +59,10 @@ public class TCPServerWorker implements Runnable {
                     agw.sendUdp(udp);
                 }}
                 //{Dont look}
-                if(p.getFlag()==201) p.setFlag(200);
+                if(p.getFlag()==201) p.setFlag(200);else
+                    sendingWindow.insert(p.getSeqNo(), p);
                 //Serialize
+                System.out.println("PACKTOUDP :"+p.toString());
                 bos = new ByteArrayOutputStream();
                 ObjectOutputStream out = new ObjectOutputStream(bos);
                 out.writeObject(p);
@@ -66,7 +71,8 @@ public class TCPServerWorker implements Runnable {
                 bos.close();
                 //Send
                 udp = new DatagramPacket(data, data.length, anonGW, udpPort);
-                sendingWindow.insert(p.getSeqNo(), p);
+
+
                 agw.sendUdp(udp);
             }
         }

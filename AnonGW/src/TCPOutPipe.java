@@ -24,7 +24,7 @@ public class TCPOutPipe implements Runnable {
      try{
          while(flag>0){
              PacketUDP pack = queue.take();
-             //System.out.println("Flag :"+flag );
+             System.out.println("TCPOUT :"+pack );
              flag=pack.getFlag();
              buf = pack.getBody();
              //System.out.println(new String(buf));

@@ -26,22 +26,27 @@ public class Session {
         udpQueue = udpq;
         recieving=new SlidingWindow(WINDOW_SIZE);
     }
-    public Session(int sessionId,Socket sock, InetAddress peer,int udpPort ,int tcpPort, BlockingQueue<PacketUDP> tcp,BlockingQueue<PacketUDP>udp){
+    public Session(int sessionId,Socket sock, InetAddress peer,int udpPort ,int tcpPort, BlockingQueue<PacketUDP> tcp,BlockingQueue<PacketUDP> udp){
         this.sessionId =sessionId;
         tcpSock=sock;
         this.udpPort=udpPort;
         anonGWAddress = peer;
         tcpQueue = tcp;
+
         udpQueue = udp;
         recieving=new SlidingWindow(WINDOW_SIZE);
     }
 
+    @Override
     public String toString() {
         return "Session{" +
                 "sessionId=" + sessionId +
-                ",|| tcpSock=" + tcpSock +
-                ",|| anonGWAddress=" + anonGWAddress +
-                ",|| udpPort=" + udpPort +
+                ", tcpSock=" + tcpSock +
+                ", anonGWAddress=" + anonGWAddress +
+                ", udpPort=" + udpPort +
+                ", tcpQueue=" + tcpQueue +
+                ", udpQueue=" + udpQueue +
+                ", recieving=" + recieving +
                 '}';
     }
 
