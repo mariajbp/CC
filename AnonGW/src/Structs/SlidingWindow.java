@@ -5,10 +5,13 @@ import java.time.Instant;
 import java.util.Arrays;
 
 import static Structs.Session.TIMEOUT;
-
+/**Classe de ordenaçao e controlo de pacotes perdidos **/
 public class SlidingWindow {
+    /** Offset do indice e do apontador para a base do array **/
     int base;
+    /**Tamanho maximo do array **/
     int lenght;
+    /**Array de pacotes UDP**/
     PacketUDP[] buffer;
 
     public SlidingWindow(int l){
@@ -16,6 +19,7 @@ public class SlidingWindow {
         lenght=l;
         buffer= new PacketUDP[lenght];
     }
+    /**Inserçao de um pacote**/
    public int insert(int index, PacketUDP p){
         if(base ==-1) base = index;
         int i=index-base;
@@ -24,10 +28,10 @@ public class SlidingWindow {
         buffer[i]=p;
         return 1;
     }
-    //ACK [DANGEROUS]
-    public void setNull(int index){
+    /**Exclusao de um pacote e trimming do buffer **/
+    public boolean setNull(int index){
         int i=index-base;
-        if(i<0|| i>=lenght) return;
+        if(i<0|| i>=lenght) return false;
         buffer[i]=null;
         int nullInd=0;
         while (nullInd<lenght && buffer[nullInd]==null){nullInd++;}
@@ -37,13 +41,14 @@ public class SlidingWindow {
             buffer=r;
             base +=nullInd;
         }
+        return  true;
     }
    public PacketUDP get(int index){
         int i=index-base;
         if(i<0|| i>=lenght) return null;
         return buffer[i];
     }
-    //Retrieve and remove Recieving
+    /**Metodo que devolve um array de pacotes ordenados, sem buracos e trimming dos valores removidos do array**/
    public PacketUDP[] retrieve(){
         int i=0,j=0;
         while (i<lenght && buffer[i]!= null){i++;}
@@ -57,17 +62,16 @@ public class SlidingWindow {
         buffer=newbuf;
         return r;
     }
-    //Sending
-    //----------nullInd----------timeOutInd-----------------------------
-    //|null|null|timedOut|timedOut|timedOut|packet|packet|...
-    //-----------^-----------------^------------------------
+    /**Metodo que devolve um array de pacotes timedOut  ordenados, sem buracos
+     * e trimming dos valores removidos do array**/
     public PacketUDP[] retry(){
         int timeOutInd=0,nullInd=0;
         long print =0L;
         while (nullInd<lenght && buffer[nullInd]==null){nullInd++;}
         while (timeOutInd+nullInd<lenght && buffer[timeOutInd+nullInd]!=null
                 && (print = Duration.between(buffer[timeOutInd+nullInd].getTimeStamp(), Instant.now()).toMillis())>TIMEOUT){
-            buffer[timeOutInd+nullInd].setTimeStamp(Instant.now());timeOutInd++; System.out.println("TIMEOUT :"+print);}
+
+           buffer[timeOutInd+nullInd].setTimeStamp(Instant.now());timeOutInd++; }
         PacketUDP[] r = new PacketUDP[timeOutInd];
         PacketUDP[] newbuf = new PacketUDP[lenght];
         System.arraycopy(buffer,nullInd,r,0,timeOutInd);

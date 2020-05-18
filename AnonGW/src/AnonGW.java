@@ -11,7 +11,6 @@ import java.net.DatagramSocket;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.security.*;
-import java.util.Arrays;
 import java.util.Base64;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
@@ -20,21 +19,27 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.LinkedBlockingQueue;
 
 public class AnonGW {
+    /**Tamanho maximo do array de bytes de cada packet**/
     public static final int BODY_MAX_SIZE = 1024;
-    public static final int SOCKET_BUFFER_SIZE = 100;
+    /**Map de sessoes em curso**/
     private ConcurrentMap<Integer, Session> sessionTable;
+    /**Map de chaves publicas por AnonGW**/
     private ConcurrentMap<InetAddress, String> keyChain;
+    /**Chave RSA publica deste AnonGW**/
     private PublicKey publicKey;
+    /**Chave RSA privada deste AnonGW**/
     private PrivateKey privateKey;
+    /**Lista de AnonGW adjacentes **/
     private List<InetAddress> peers;
+    /**Port para comunicaçao UDP**/
     private  int udpPort;
+    /**Socket para comunicaçao UDP**/
     private DatagramSocket sendUdp;
 
     public AnonGW(List<InetAddress> peers,DatagramSocket udp ,int udpPort) {
         sessionTable = new ConcurrentHashMap<>();
         keyChain = new ConcurrentHashMap<>();
         this.peers=peers;
-
         this.udpPort=udpPort;
         sendUdp = udp;
         try {
@@ -46,7 +51,7 @@ public class AnonGW {
         } catch (Exception e) {
             e.printStackTrace();
     }}
-    //FromTCP
+    /**Metodo que inicializa uma sessao com base numa ligaçao TCP de um cliente**/
     public int initSession(Socket sock) {
         InetAddress peer = peers.get((int) (Math.random()*(peers.size()-1)));
         BlockingQueue<PacketUDP> tcpqueue = new LinkedBlockingQueue<PacketUDP>();
@@ -58,11 +63,10 @@ public class AnonGW {
         } catch (Exception e){e.printStackTrace();}
         Session s =  new Session(sock, peer,udpPort,tcpqueue,udpqueue,key);
         int sessId = s.getId();
-
         sessionTable.put(sessId,s);
         return sessId;
     }
-    //From UDP
+    /**Metodo que  iniciaiza uma sessao com base numa ligaçao UDP de um AnonGW**/
     public void initSession(Socket sock, InetAddress gateway, int tcpPort ,int sessionId, Key key) {
         BlockingQueue<PacketUDP> tcpQueue = new LinkedBlockingQueue<>();
         BlockingQueue<PacketUDP> udpQueue = new LinkedBlockingQueue<>();
@@ -73,31 +77,29 @@ public class AnonGW {
         return sessionTable.get(id);
     }
 
+    /**Metodo que centraliza o envio de datagramas UDP**/
     public void sendUdp(DatagramPacket packet) throws IOException {
        sendUdp.send(packet);
     }
+    /**Metodo que verifica se existe uma sessao dado um id**/
     public boolean hasSession(int id){
         return sessionTable.containsKey(id);
     }
+    /**Metodo que verifica se o endereço pertence a um peer**/
     public boolean isAnonGW(InetAddress i){
         return peers.contains(i);
     }
+    /**Metodo que regista a chave RSA publica de um AnonGW**/
     public  boolean initKey(InetAddress peer, String key){
        if (keyChain.containsKey(peer))  return  false;
        keyChain.put(peer,key);
        return  true;
     }
 
-
-    public PublicKey getPublicKey() {
-        return publicKey;
-    }
-
     public PrivateKey getPrivateKey() {
         return privateKey;
     }
 
-    @Override
     public String toString() {
         return "AnonGW{" +
                 "sessionTable=" + sessionTable +
@@ -106,26 +108,23 @@ public class AnonGW {
                 ", sendUdp=" + sendUdp +
                 '}';
     }
-
+    /**Metodo que devolve a chave RSA publica de um peer**/
     public String getPublicKeyFrom(InetAddress anonGW) {
         return keyChain.get(anonGW);
     }
-
+    /**Metodo que requisita a chave publica de um AnonGW**/
     public void requestPublicKeyFrom(InetAddress anonGW) {
         System.out.println("Requested key from "+anonGW);
         PacketUDP c;
         byte[] data= new Container( (c=new PacketUDP(Base64.getEncoder().encodeToString(publicKey.getEncoded()),328)).serialize()).serialize();
-       System.out.println(c);
         DatagramPacket pack = new DatagramPacket(data,data.length,anonGW,udpPort);
         try {sendUdp(pack);} catch (Exception e){e.printStackTrace();}
     }
 
-
+    /**Metodo que envia a chave RSA publica a um AnonGW**/
     public void replyPublicKeyTo(InetAddress address) {
         System.out.println("Replied key to "+address);
         byte[] peerKey = publicKey.getEncoded();
-        System.out.println(publicKey.getAlgorithm() + " || " +
-        publicKey.getFormat() +" || "+ peerKey.length);
         byte[] data= new Container(new PacketUDP(Base64.getEncoder().encodeToString(peerKey),329).serialize()).serialize();
         DatagramPacket pack = new DatagramPacket(data,data.length,address,udpPort);
         try {sendUdp(pack);} catch (Exception e){e.printStackTrace();}

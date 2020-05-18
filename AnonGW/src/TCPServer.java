@@ -2,7 +2,9 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class TCPServer implements Runnable {
+    /**Socket de receçao TCP **/
     ServerSocket ss;
+    /**Instancia do AnonGW **/
     AnonGW agw;
 
 
@@ -16,6 +18,7 @@ public class TCPServer implements Runnable {
     public void run() {
         try{
             while(true) {
+                /**Inicio de sessão **/
                 Socket sock = ss.accept();
                 int sessId = agw.initSession(sock);
                 new Thread(new TCPInPipe(sessId,agw)).start();

@@ -11,17 +11,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/AnonGW.jar" beforeDir="false" afterPath="$PROJECT_DIR$/AnonGW.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/AnonGW.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/AnonGW.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/META-INF/AnonGW.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/PacketReg.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/PacketUDP.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Structs/PacketUDP.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Structs/Session.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/Structs/SlidingWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/Structs/SlidingWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TCPInPipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/TCPInPipe.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TCPOutPipe.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/TCPOutPipe.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/TCPServerWorker.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/TCPServerWorker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/AnonGW/UDPServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/AnonGW/UDPServer.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AnonGW.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AnonGW.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Structs/PacketReg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Exceptions/EndOfFileException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servidor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Structs/Container.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structs/Container.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Structs/PacketUDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structs/PacketUDP.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Structs/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structs/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Structs/SlidingWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Structs/SlidingWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TCPInPipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCPInPipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TCPOutPipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCPOutPipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TCPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCPServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/TCPServerWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/TCPServerWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/UDPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/UDPServer.java" afterDir="false" />
     </list>
@@ -132,6 +138,7 @@
       <workItem from="1589622097281" duration="6961000" />
       <workItem from="1589666941278" duration="8513000" />
       <workItem from="1589707037808" duration="26535000" />
+      <workItem from="1589793682357" duration="19273000" />
     </task>
     <task id="LOCAL-00001" summary="BARRREEEEEEEEEEEEEEEEIIIIIIIIIIIIIIIIIII">
       <created>1584461083287</created>
@@ -252,10 +259,10 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="484" y="316" width="464" height="160" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/67.27.1299.741@67.27.1299.741" timestamp="1584455258922" />
-    <state x="407" y="135" width="618" height="580" key="find.popup" timestamp="1589302936061">
+    <state x="407" y="135" width="618" height="580" key="find.popup" timestamp="1589804194953">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="407" y="135" width="618" height="580" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1589302936061" />
+    <state x="407" y="135" width="618" height="580" key="find.popup/67.27.1299.741@67.27.1299.741" timestamp="1589804194953" />
     <state x="412" y="154" width="598" height="485" key="refactoring.ChangeSignatureDialog" timestamp="1589711357556">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
@@ -264,9 +271,9 @@
       <screen x="67" y="27" width="1299" height="741" />
     </state>
     <state x="380" y="175" key="run.anything.popup/67.27.1299.741@67.27.1299.741" timestamp="1585243947403" />
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1589739546468">
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup" timestamp="1589804063698">
       <screen x="67" y="27" width="1299" height="741" />
     </state>
-    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1589739546468" />
+    <state x="379" y="89" width="672" height="678" key="search.everywhere.popup/67.27.1299.741@67.27.1299.741" timestamp="1589804063698" />
   </component>
 </project>
